@@ -1,24 +1,18 @@
-import { useState } from "react";
 import "./index.css";
 
-export const ListCard = ({ item }) => {
-  const [checked, setChecked] = useState(false);
+export const ListCard = (props) => {
+  const { item } = props;
 
   return (
     <div className="list-card-container">
-      <div className="checkbox">
-        <input
-          onChange={() => setChecked(!checked)}
-          checked={checked}
-          id="checkbox"
-          type="checkbox"
-        />
-
-        <label htmlFor="checkbox" />
-      </div>
+      <img
+        className="checkbox"
+        src={`/images/${item?.checked ? "checked.svg" : "unchecked.svg"}`}
+        alt="checked-item"
+      />
       <div className="list-card-text-container">
-        <span className="list-card-title">{item?.name}</span>
-        <span className="list-card-subtitle">{item?.quantity}</span>
+        <span className="list-card-title">{item.name}</span>
+        <span className="list-card-subtitle">{item.quantity}</span>
       </div>
       <img src="/images/arrow.svg" alt="arrow-icon" className="arrow-icon" />
     </div>

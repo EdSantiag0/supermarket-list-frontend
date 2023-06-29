@@ -7,5 +7,3 @@ export const api = axios.create({
     username: localStorage.getItem(SAVE_USERNAME_PATH) || "",
   },
 });
-
-console.log(localStorage);
