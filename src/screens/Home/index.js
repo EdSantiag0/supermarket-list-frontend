@@ -17,8 +17,14 @@ export const HomeScreen = () => {
     navigate("/list");
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      onClickContinue();
+    }
+  };
+
   return (
-    <div className="home-screen-container">
+    <div onKeyDown={handleKeyDown} className="home-screen-container">
       <div className="home-screen-content-container">
         <img
           className="shopping-bag-image"

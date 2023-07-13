@@ -55,6 +55,20 @@ export const Modal = ({ onClose, item }) => {
     }
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      if (!item) {
+        callAddItem();
+      } else {
+        callUpdateItem();
+      }
+    } else if (e.key === "Delete" && item) {
+      callDeleteItem();
+    } else if (e.key === "Escape") {
+      onClose();
+    }
+  };
+
   useEffect(() => {
     if (item?.name && item?.quantity) {
       setName(item?.name);
@@ -63,7 +77,7 @@ export const Modal = ({ onClose, item }) => {
   }, [item]);
 
   return (
-    <div className="modal">
+    <div className="modal" onKeyDown={handleKeyDown} tabIndex={-1}>
       <div className="modal-content">
         <div className="modal-header">
           <h1>{item ? "Editar item" : "Adicionar novo item"}</h1>

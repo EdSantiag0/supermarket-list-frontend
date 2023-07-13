@@ -48,8 +48,18 @@ export const ListScreen = () => {
     }
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      onClickAddButton();
+    }
+  };
+
   return (
-    <div className="list-screen-container">
+    <div
+      className="list-screen-container"
+      onKeyDown={handleKeyDown}
+      tabIndex={-1}
+    >
       <div className="list-screen-content-container">
         <div className="list-screen-header">
           <div className="list-screen-title-container">
