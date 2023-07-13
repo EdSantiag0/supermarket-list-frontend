@@ -7,6 +7,7 @@ import { createItem, updateItem, deleteItem } from "../../services/request";
 export const Modal = ({ onClose, item }) => {
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState(1);
+  const [modalVisible, setModalVisible] = useState(false);
 
   const validateBeforeSave = () => {
     if (name.length < 3) {
@@ -55,33 +56,45 @@ export const Modal = ({ onClose, item }) => {
     }
   };
 
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      if (!item) {
-        callAddItem();
-      } else {
-        callUpdateItem();
-      }
-    } else if (e.key === "Delete" && item) {
-      callDeleteItem();
-    } else if (e.key === "Escape") {
-      onClose();
-    }
-  };
-
   useEffect(() => {
     if (item?.name && item?.quantity) {
       setName(item?.name);
       setQuantity(item?.quantity);
     }
+    setModalVisible(true);
   }, [item]);
 
+  const closeModal = () => {
+    setModalVisible(false);
+    setTimeout(() => {
+      onClose();
+    }, 300);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      if (item) {
+        callUpdateItem();
+      } else {
+        callAddItem();
+      }
+    } else if (e.key === "Delete" && item) {
+      callDeleteItem();
+    } else if (e.key === "Escape") {
+      closeModal();
+    }
+  };
+
   return (
-    <div className="modal" onKeyDown={handleKeyDown} tabIndex={-1}>
+    <div
+      className={`modal ${modalVisible ? "modal-visible" : ""}`}
+      onKeyDown={handleKeyDown}
+      tabIndex={-1}
+    >
       <div className="modal-content">
         <div className="modal-header">
           <h1>{item ? "Editar item" : "Adicionar novo item"}</h1>
-          <button onClick={onClose} className="modal-close-button" />
+          <button onClick={closeModal} className="modal-close-button" />
         </div>
         <Input
           onChange={(text) => setName(text)}
