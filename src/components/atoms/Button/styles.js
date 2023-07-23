@@ -20,7 +20,7 @@ export const ButtonContainer = styled.button`
   margin-bottom: 10px;
 
   &:hover {
-    background-color: #7750db;
+    background-color: ${({ theme }) => theme.colors.secundary};
   }
 
   @media (max-width: 420px) {
