@@ -1,21 +1,15 @@
 import styled from 'styled-components'
 
 export const Loader = styled.span`
-  width: 64px;
-  height: 64px;
-  border: 8px solid ${({ theme }) => theme.colors.white};
-  border-bottom-color: ${({ theme }) => theme.colors.primary};
-  border-radius: 50%;
-  display: inline-block;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
+  width: 240px;
+  height: 20px;
+  transform: skewX(-45deg);
+  background: linear-gradient(#766df4 0 0) left -60px top 0/60px 40px no-repeat #e4e4ed;
+  animation: ct3 1s infinite linear;
 
-  @keyframes rotation {
-    0% {
-      transform: rotate(0deg);
-    }
+  @keyframes ct3 {
     100% {
-      transform: rotate(360deg);
+      background-position: right -60px top 0;
     }
   }
 `
