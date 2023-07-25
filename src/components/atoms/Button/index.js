@@ -6,7 +6,6 @@ export const Button = ({ children, onClick, variant, icon }) => {
       {icon && (
         <ButtonIcon
           src={`/images/${icon}.svg`}
-          className="button-icon"
           alt={`supermarket_icon_${icon}`}
         />
       )}

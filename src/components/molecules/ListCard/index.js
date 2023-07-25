@@ -28,7 +28,6 @@ export const ListCard = ({ item, onClick, onCheckItem }) => {
         <ArrowIcon
           src="/images/arrow.svg"
           alt="arrow-icon"
-          className="arrow-icon"
           onClick={() => onClick(item)}
         />
       </ArrowIconContainer>

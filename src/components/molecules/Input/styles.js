@@ -13,6 +13,10 @@ export const InputContainer = styled.div`
   border-style: solid;
   margin-bottom: 16px;
 
+  :focus {
+    outline: none;
+  }
+
   @media (max-width: 420px) {
     max-width: 300px;
   }
@@ -30,8 +34,4 @@ export const InputText = styled.input`
   margin-left: 6px;
   font-size: 16px;
   font-family: 'Avenir Next';
-
-  :focus {
-    outline: none;
-  }
 `

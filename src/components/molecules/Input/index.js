@@ -7,7 +7,6 @@ export const Input = ({ label, placeholder, value, onChange, type }) => {
       <InputText
         onChange={(e) => onChange(e.target.value)}
         value={value}
-        className="input"
         placeholder={placeholder}
         type={type || 'text'}
       />

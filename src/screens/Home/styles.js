@@ -8,6 +8,10 @@ export const ScreenContainer = styled.div`
   align-items: center;
   justify-content: center;
 
+  :focus {
+    outline: none;
+  }
+
   @media (max-width: 830px) {
     overflow-x: hidden;
     overflow-y: hidden;

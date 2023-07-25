@@ -1,18 +1,19 @@
+import { Subtitle } from 'components/atoms'
 import { ListCard } from 'components/molecules/ListCard'
-import './index.css'
+import { ListRenderContainer } from './styles'
 
 export const ListRender = ({ list, onEdit, onCheckItem }) => {
   if (list?.length === 0) {
     return (
-      <h3>
+      <Subtitle>
         Sua lista esta vazia, clique no botão "Adicionar" para incluir novos
         itens.
-      </h3>
+      </Subtitle>
     )
   }
 
   return (
-    <div className="list-render-container">
+    <ListRenderContainer>
       {list.map((item) => (
         <ListCard
           onCheckItem={onCheckItem}
@@ -21,6 +22,6 @@ export const ListRender = ({ list, onEdit, onCheckItem }) => {
           key={item?._id}
         />
       ))}
-    </div>
+    </ListRenderContainer>
   )
 }
