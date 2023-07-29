@@ -5,7 +5,7 @@ This is an application build using React.JS, with the goal of make easier create
 Esta é uma aplicação construída usando React.JS, com o objetivo de facilitar a criação de listas de supermercado. Foi utilizado o Atomic Design Concept para organizar os componentes.
 
 <p>
-  <img heigth="500" src="https://github.com/EdSantiag0/supermarket-list-frontend/blob/master/public/print-supermerket-list.png"/>
+  <img heigth="500" src="https://github.com/EdSantiag0/supermarket-list-frontend/blob/master/public/telainicial-supermarketlist.png"/>
 </p>
 
 ## Technologies Used
