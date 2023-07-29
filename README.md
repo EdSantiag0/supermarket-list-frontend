@@ -16,6 +16,7 @@ Esta é uma aplicação construída usando React.JS, com o objetivo de facilitar
 - Eslint
 - Prettier
 - Absolute Imports
+- Gimp
 
 ## Requeriments to Run:
 
