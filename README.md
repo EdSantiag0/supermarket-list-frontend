@@ -8,6 +8,10 @@ Esta é uma aplicação construída usando React.JS, com o objetivo de facilitar
   <img heigth="500" src="https://github.com/EdSantiag0/supermarket-list-frontend/blob/master/public/telainicial-supermarketlist.png"/>
 </p>
 
+## Live Version
+
+<https://supermarket-list-frontend-khaki.vercel.app/>
+
 ## Technologies Used
 
 - React.js
@@ -17,6 +21,7 @@ Esta é uma aplicação construída usando React.JS, com o objetivo de facilitar
 - Prettier
 - Absolute Imports
 - Gimp
+- Vercel
 
 ## Requeriments to Run:
 
